@@ -15,15 +15,6 @@
                 <input type="checkbox", id="keepLogin"/>
         
                 <button id="tryLogin">Login</button>
-                <?php
-                    $users = new PDO('users.db');
-                    $inputUsername = $_GET['username'];
-                    $query = "SELECT * FROM  'students' WHERE 'username'='$inputUsername' ";
-                    $result = mysql_query($query);
-                    if (!mysql_num_rows($result)){
-                        echo"no user found!";
-                    }
-                ?>
             </div>
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
