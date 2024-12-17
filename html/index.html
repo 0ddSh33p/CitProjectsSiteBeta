@@ -2,20 +2,24 @@
 	<head>
         <title>CIT Project</title>
         <link rel="stylesheet" href="master.css" type="text/css">
+        <link rel="icon" href="cit_logo.png">
 	</head>
 	<body>
         <header>
             <h1>Login Page</h1>
+            <img id="headImg" src="cit_logo.png" height="75px" width="75px">
         </header>
-    
+        <section>
             <div id="loginBox">
-                <input type="text", name="username"/>
-                <input type="text", name="password"/>
-            
+                <input type="text" name="username" placeholder="Username"/><br>
+                <input type="text" name="password" placeholder="Password"/>
+                <br>
+                <label for="checkbox">Remember me?</label>
                 <input type="checkbox", id="keepLogin"/>
-        
-                <button id="tryLogin">Login</button>
+                <br><br>
+                <button id="tryLogin" class="button">Login</button>
             </div>
+        </section>
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
         </footer>
