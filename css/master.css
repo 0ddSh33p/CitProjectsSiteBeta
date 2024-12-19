@@ -69,7 +69,7 @@ footer {
 .button {
     background-color: #183536;
     border: none;
-    color: #F66068;
+    color: #FFE4BC;
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
@@ -85,3 +85,41 @@ footer {
     cursor: pointer;
 }
 
+.project_tile {
+    background-color: #183536;
+    border: none;
+    color: #F66068;
+    padding: 50px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+    transition-duration: 0.2s;
+}
+
+.project_tile:hover {
+    background-color: #F66068;
+    color: #183536;
+    cursor: pointer;
+}
+
+#admin_button {
+    display: inline-block;
+    background: #FFE4BC;
+    padding: 5px 10px;
+    text-decoration: underline;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #183536;
+}
+
+a:link {
+    color: #F66068;
+    text-decoration: none;
+}
+
+a:visited {
+    color: #F66068;
+    text-decoration: none;
+}
