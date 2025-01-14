@@ -112,6 +112,12 @@ footer {
     border-radius: 8px;
     font-size: 16px;
     color: #183536;
+    margin: 2px;
+}
+
+.delete {
+    position: relative;
+    left: 70%;
 }
 
 a:link {
