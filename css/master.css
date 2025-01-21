@@ -19,8 +19,8 @@ header {
 	left: 0px;
 	width: 100%;
 	text-align: left;
-	z-index: 1;
-	height: 6em;
+	z-index: 10;
+	height: 75px;
 	padding: 10px;
 }
 
@@ -41,10 +41,23 @@ h1 {
 
 section {
 	float: top;
-	height: 5em;
-	padding: 5px;
-	margin-top: 10%;
-    padding-bottom: 50px;
+    width: 90%;
+	margin-top: 75px;
+    padding: 30px;
+    height: 70%;
+    position: absolute;
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin-bottom: 5px;
+    border-color:#183536;
+    border-radius: 8px;
+}
+
+input[type=text]:focus {
+    background-color: #FFE4BC;
 }
 
 footer {
@@ -68,7 +81,7 @@ footer {
 
 .button {
     background-color: #183536;
-    border: none;
+    border-color: #FFE4BC;
     color: #FFE4BC;
     padding: 10px 20px;
     text-align: center;
@@ -81,26 +94,29 @@ footer {
 
 .button:hover {
     background-color: #FFE4BC;
-    color: #005298;
+    color: #183536;
+    border-color: #183536;
     cursor: pointer;
 }
 
 .project_tile {
+    display: inline-block;
     background-color: #183536;
-    border: none;
+    border-color: #F66068;
     color: #F66068;
     padding: 50px 50px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
     border-radius: 8px;
+    font-size: 16px;
     transition-duration: 0.2s;
+    margin: 2px;
 }
 
 .project_tile:hover {
     background-color: #F66068;
     color: #183536;
+    border-color: #183536;
     cursor: pointer;
 }
 
@@ -108,17 +124,29 @@ footer {
     display: inline-block;
     background: #FFE4BC;
     padding: 5px 10px;
-    text-decoration: underline;
+    text-decoration: none;
     border-radius: 8px;
     font-size: 16px;
     color: #183536;
-    margin: 2px;
+    margin: 3px;
+}
+
+#project {
+    display: inline-block;
+    background: #FFE4BC;
+    padding: 10px 10px;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #183536;
+    margin: 3px;
 }
 
 .delete {
     position: relative;
     left: 70%;
 }
+
 
 a:link {
     color: #F66068;
@@ -128,4 +156,25 @@ a:link {
 a:visited {
     color: #F66068;
     text-decoration: none;
+}
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+.edit-box {
+    z-index: 5;
+    position: absolute;
+    display: inline-block;
+    width: 70%;
+    height: 75%;
+    margin-left: 15%;
+    padding: 10px;
+    background:#F66068;
+    border-radius: 15px;
+}
+
+#edit_label {
+    color: #183536;
 }
