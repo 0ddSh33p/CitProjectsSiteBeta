@@ -41,6 +41,7 @@
 					method: 'GET'	
 				});
 			const data = await res.json();
+			console.log(data)
 			if (data.propType == 1){
 				window.location.replace("https://localhost:3000/student")
 			}
