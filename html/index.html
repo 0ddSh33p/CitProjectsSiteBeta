@@ -11,13 +11,35 @@
         </header>
         <section>
             <div id="loginBox">
-                <input type="text" name="username" placeholder="Username"/><br>
-                <input type="text" name="password" placeholder="Password"/>
-                <br>
-                <label>Remember me?</label>
-                <input type="checkbox", id="keepLogin"/>
-                <br><br>
-                <button id="tryLogin" class="button">Login</button>
+		<form>
+	                <input type="text" id = "username" name="username" placeholder="Username"/><br>
+	                <input type="text" id = "password" name="password" placeholder="Password"/>
+	                <br>
+	                <label>Remember me?</label>
+	                <input type="checkbox", id="keepLogin"/>
+	                <br><br>
+	                <button id="tryLogin" class="button">Login</button>
+		</form>
+		<script>
+			var sendUser = getElementById("username");
+			var sendPass = getElementByID("password");
+
+			tryLogin.addEventListener('click',tryLogin)
+			
+			// add the final url here
+			const baseURL = "https://localhost:3000/tryUser/";
+			async function trylogin(e){
+				e.preventDefault();
+				const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value ,
+					{
+						method: 'GET'	
+					});
+				const data = await res.json();
+				if (data.propType == 1){
+					window.location.replace("https://localhost:3000/student")
+				}
+			}
+		</script>
             </div>
         </section>
         <footer>
