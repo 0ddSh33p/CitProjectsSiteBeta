@@ -2,22 +2,103 @@
 	<head>
         <title>CIT Project</title>
         <link rel="stylesheet" href="../css/master.css" type="text/css">
-        <link rel="icon" href="../css/cit_logo.png">
+        <link rel="icon" href="https://raw.githubusercontent.com/0ddSh33p/CitProjectsSiteBeta/main/css/cit_logo.png">
 	</head>
 	<body>
         <header>
             <h1>Admin</h1>
-            <img id="headImg" src="../css/cit_logo.png" height="75px" width="75px">
+            <img id="headImg" src="https://raw.githubusercontent.com/0ddSh33p/CitProjectsSiteBeta/main/css/cit_logo.png" height="75px" width="75px">
         </header>
         <section>
+            <div class="edit-box">
+                <form>
+                    <input type="text" name="Project Name" placeholder="Project Name"/><br>
+                    <input type="text" name="Client Name" placeholder="Client Name"/><br>
+                    <label id="edit_label">Advisor</label>
+                    <select id="advisors" name="advisors">
+                    </select><br>
+                    <label id="edit_label">Juniors</label>
+                    <select id="juniors" name="juniors">
+                    </select><br>
+                    <label id="edit_label">Sophomores</label>
+                    <select id="sophomores" name="sophomores">
+                    </select>
+                    <br><br>
+                    <button id="edit-confirm" class="button">Edit</button>
+                    <button id="back" class="button">Cancel</button>
+                </form>
+            </div>
+            <script>
+                let data = ["Caudle", "Norris"];
+                let list = document.getElementById("advisors");
+                for (i = 0; i < data.length; ++i) {
+                    let option = document.createElement('option');
+                    option.innerText = data[i];
+                    list.appendChild(option);
+                }
+
+                let jdata = ["Ram", "Shyam", "Sita", "Gita"];
+                let jlist = document.getElementById("juniors");
+                for (i = 0; i < data.length; ++i) {
+                    let option = document.createElement('option');
+                    option.innerText = jdata[i];
+                    jlist.appendChild(option);
+                }
+
+                let sdata = ["a", "b", "c", "d"];
+                let slist = document.getElementById("sophomores");
+                for (i = 0; i < data.length; ++i) {
+                    let option = document.createElement('option');
+                    option.innerText = sdata[i];
+                    slist.appendChild(option);
+                }
+            </script>
             <div id="admin_button">
-                <a href="#" id="delete">Delete</a><br>
                 <button class="project_tile">Project Placeholder</button><br>
-                <a href="#" id="edit">Edit</a>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
+            </div>
+            <div id="admin_button">
+                <button class="project_tile">Project Placeholder</button><br>
+                <a href="#" id="edit">Edit</a><a href="#" class="delete">Delete</a><br>
             </div>
             <div id="add" style="position:fixed">
                 <button class="button">+</button>
             </div>
+            <p class="prevent-select">&nbsp;</p>
+            <p class="prevent-select">&nbsp;</p>
+            <p class="prevent-select">&nbsp;</p>
         </section>
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
