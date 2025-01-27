@@ -19,7 +19,7 @@
 	                	<input type="checkbox", id="keepLogin"/>
 			</label>
 	                <br><br>
-	                <button id="tryLogin" class="button">Login</button>
+	                <button onclick="tryLogin()" id="Login" class="button">Login</button>
 		</form>
             </div>
         </section>
@@ -30,8 +30,6 @@
 	<script>
 		var sendUser = document.getElementById("username");
 		var sendPass = document.getElementById("password");
-
-		tryLogin.addEventListener('click',tryLogin)
 		
 		// add the final url here
 		const baseURL = "https://localhost:3000/tryUser/";
