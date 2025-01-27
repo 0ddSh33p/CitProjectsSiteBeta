@@ -35,7 +35,7 @@
 		
 		// add the final url here
 		const baseURL = "https://localhost:3000/tryUser/";
-		async function trylogin(e){
+		async function tryLogin(e){
 			e.preventDefault();
 			const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value ,
 				{
