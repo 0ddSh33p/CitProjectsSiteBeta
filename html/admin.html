@@ -17,9 +17,13 @@
                     <label id="edit_label">Advisor</label>
                     <select id="advisors" name="advisors">
                     </select><br>
+                    
                     <label id="edit_label">Juniors</label>
-                    <select id="juniors" name="juniors">
-                    </select><br>
+                    <div id="list1" class="dropdown-check-list" tabindex="100">
+                        <span class="anchor">Select Juniors</span>
+                        <ul id="juniors">
+                        </ul>
+                    </div><br>
                     <label id="edit_label">Sophomores</label>
                     <select id="sophomores" name="sophomores">
                     </select>
@@ -29,6 +33,7 @@
                 </form>
             </div>
             <script>
+                
                 let data = ["Caudle", "Norris"];
                 let list = document.getElementById("advisors");
                 for (i = 0; i < data.length; ++i) {
@@ -37,20 +42,57 @@
                     list.appendChild(option);
                 }
 
-                let jdata = ["Ram", "Shyam", "Sita", "Gita"];
-                let jlist = document.getElementById("juniors");
-                for (i = 0; i < data.length; ++i) {
-                    let option = document.createElement('option');
-                    option.innerText = jdata[i];
-                    jlist.appendChild(option);
-                }
-
-                let sdata = ["a", "b", "c", "d"];
+                /*let sdata = ["a", "b", "c", "d"];
                 let slist = document.getElementById("sophomores");
-                for (i = 0; i < data.length; ++i) {
+                for (i = 0; i < data.length; i++) {
                     let option = document.createElement('option');
                     option.innerText = sdata[i];
                     slist.appendChild(option);
+                }*/
+
+                let jdata = ["Ram", "Shyam", "Sita", "Gita"];
+                
+                let jlist = document.getElementById("list1");
+                for (i = 0; i < jdata.length; i++) {
+                    let option = document.createElement('li');
+                    //create checkbox
+                    let checkbox = document.createElement('input');
+                    
+                    // Assigning the attributes to created checkbox
+                    checkbox.type = "checkbox";
+                    checkbox.name = "name";
+                    checkbox.value = "value";
+                    checkbox.id = i;
+        
+                    // creating label for checkbox
+                    let label = document.createElement('label');
+        
+                    // assigning attributes for the created label tag 
+                    label.htmlFor = "id";
+        
+                    // appending the created text to 
+                    // the created label tag 
+                    label.appendChild(document.createTextNode(jdata[i]));
+                    //let text = document.createTextNode(jdata[i]);
+        
+                    // appending the checkbox and label to div
+                    //option.appendChild(text);
+                    option.appendChild(checkbox);
+                    option.appendChild(label);
+                    jlist.appendChild(option);
+                    
+                }
+            
+
+                var checkList = document.getElementById('list1');
+                checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
+                    if (checkList.classList.contains('visible')) {
+                        checkList.classList.remove('visible');
+                        console.log("is not visible")
+                    } else {
+                        checkList.classList.add('visible');
+                        console.log("is visible")
+                    }
                 }
             </script>
             <div id="admin_button">
@@ -96,6 +138,7 @@
             <div id="add" style="position:fixed">
                 <button class="button">+</button>
             </div>
+            <!--Spaces at the end of the page so that it's possible to scroll down to the bottom of the page and not have the buttons covered up by the footer-->
             <p class="prevent-select">&nbsp;</p>
             <p class="prevent-select">&nbsp;</p>
             <p class="prevent-select">&nbsp;</p>
