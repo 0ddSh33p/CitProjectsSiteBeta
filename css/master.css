@@ -1,6 +1,6 @@
 @font-face {
     font-family: "renogare";
-    src: url(Renogare.ttf) format("truetype");
+    src: url(https://raw.githubusercontent.com/0ddSh33p/CitProjectsSiteBeta/main/css/Renogare.ttf) format("truetype");
 }
 p,label {
     color: #FFE4BC;
@@ -183,7 +183,7 @@ a:visited {
     position: absolute;
     display: inline-block;
     width: 70%;
-    height: 450px;
+    height: 500px;
     margin-left: 15%;
     padding: 10px;
     background:#F66068;
@@ -201,6 +201,7 @@ a:visited {
 #edit-confirm #back {
     position: relative;
     float: bottom;
+    top: 100%
 }
 
 .dropdown-check-list {
@@ -250,7 +251,7 @@ a:visited {
     padding: 3px;
 }
 
-
+/*dropdown for sophomores*/
 
 .dropdown-check-list-s {
     display: inline-block;
