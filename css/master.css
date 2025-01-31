@@ -1,5 +1,10 @@
+@font-face {
+    font-family: "renogare";
+    src: url(Renogare.ttf) format("truetype");
+}
 p,label {
     color: #FFE4BC;
+    font-family: "renogare", "verdana", sans-serif;
 }
 body {
     background: #005298;
@@ -33,7 +38,7 @@ header {
 
 h1 {
     color: #FFE4BC;
-	font-family: "Courier New", monospace;
+	font-family: "renogare", "verdana", sans-serif;
     font-size: 40pt;
     width: 50%;
     display: inline;
@@ -46,10 +51,12 @@ section {
     padding: 30px;
     height: 70%;
     position: absolute;
+    font-family: "renogare", "verdana", sans-serif;
 }
 
 input[type=text] {
-    width: 50%;
+    font-family: "renogare", "verdana", sans-serif;
+    width: 100%;
     padding: 12px 20px;
     margin-bottom: 5px;
     border-color:#183536;
@@ -65,7 +72,7 @@ footer {
     left: 0px;
 	width: 100%;
 	text-align: left;
-	z-index: 1;
+	z-index: 10;
 	height: 50px;
 	padding: 10px;
     margin-top: 5%;
@@ -79,6 +86,12 @@ footer {
     left: 90%;
 }
 
+#logout {
+    position: absolute;
+    top: 20%;
+    left: 89%;
+}
+
 .button {
     background-color: #183536;
     border-color: #FFE4BC;
@@ -87,6 +100,7 @@ footer {
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    font-family: "renogare", "verdana", sans-serif;
     font-size: 16px;
     border-radius: 12px;
     transition-duration: 0.2s;
@@ -108,6 +122,7 @@ footer {
     text-align: center;
     text-decoration: none;
     border-radius: 8px;
+    font-family: "renogare", "verdana", sans-serif;
     font-size: 16px;
     transition-duration: 0.2s;
     margin: 2px;
@@ -144,7 +159,7 @@ footer {
 
 .delete {
     position: relative;
-    left: 70%;
+    left: 65%;
 }
 
 
@@ -168,19 +183,24 @@ a:visited {
     position: absolute;
     display: inline-block;
     width: 70%;
-    height: 75%;
+    height: 450px;
     margin-left: 15%;
     padding: 10px;
     background:#F66068;
     border-radius: 15px;
     border-style: solid;
     border-width:5px;
-    border-color:bisque;
+    border-color:rgb(243, 210, 169);
 }
 
 #edit_label {
     color: #183536;
     display: block;
+}
+
+#edit-confirm #back {
+    position: relative;
+    float: bottom;
 }
 
 .dropdown-check-list {
@@ -195,11 +215,12 @@ a:visited {
 }
   
 .dropdown-check-list.visible .anchor {
+    color: #0094ff;
     position: absolute;
     content: "";
     border-left: 2px solid black;
     border-top: 2px solid black;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
 }
 
 .dropdown-check-list li {
@@ -209,16 +230,9 @@ a:visited {
     display: block;
     list-style: none;
     border: none;
+    font-size: 15px;
     padding: 0;
     margin: 0;
-}
-
-.dropdown-check-list.visible #juniors{
-    margin-bottom: 30px;
-}
-
-.dropdown-check-list.visible .anchor {
-    color: #0094ff;
 }
 
 .dropdown-check-list.visible #juniors{
@@ -233,5 +247,54 @@ a:visited {
     margin: 0;
     border: 1px solid #ccc;
     border-top: none;
-    padding: 2px;
+    padding: 3px;
+}
+
+
+
+.dropdown-check-list-s {
+    display: inline-block;
+}
+  
+.dropdown-check-list-s .anch {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #ccc;
+}
+  
+.dropdown-check-list-s.v .anch {
+    color: #0094ff;
+    position: absolute;
+    content: "";
+    border-left: 2px solid black;
+    border-top: 2px solid black;
+    padding: 5px 10px 5px 10px;
+}
+
+.dropdown-check-list-s li {
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
+    display: block;
+    list-style: none;
+    border: none;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-check-list-s.v #sophomores{
+    margin-bottom: 30px;
+}
+
+.dropdown-check-list-s.v li {
+    max-height: 500px;
+    transition: max-height 0.5s ease-in;
+    display: block;
+    z-index: 10;
+    margin: 0;
+    border: 1px solid #ccc;
+    border-top: none;
+    padding: 3px;
 }
