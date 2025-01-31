@@ -57,7 +57,7 @@
 		    async function logout() {
 		      try {
 		        // Send the GET request to the logout route
-		        const response = await fetch("https://localhost:3000logout", {
+		        const response = await fetch("https://localhost:3000/logout", {
 		          method: "GET",  // You can also use "POST" if your backend expects it
 		          credentials: "same-origin" // Ensures cookies are sent if needed
 		        });
