@@ -53,12 +53,9 @@
             <div id="logout">
                 <button onclick="logout()" class="button">Logout</button>
 		    <script>
-				async function logout(){
-				const res = await fetch("https://localhost:3000/logout" ,
-				{
-					method: 'GET'	
-				});
-			    }
+			async function logout(){
+				const res = fetch("https://localhost:3000/logout" , {method: 'GET'});
+			}
 		    </script>
             </div>
         </footer>
