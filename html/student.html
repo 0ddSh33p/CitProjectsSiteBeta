@@ -54,7 +54,7 @@
                 <button onclick="logout()" class="button">Logout</button>
 		    <script>
 			async function logout(){
-				const res = fetch("https://localhost:3000/logout" , {method: 'GET'});
+				window.location.href = "https://localhost:3000/logout";
 			}
 		    </script>
             </div>
