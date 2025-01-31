@@ -25,8 +25,11 @@
                         </ul>
                     </div><br>
                     <label id="edit_label">Sophomores</label>
-                    <select id="sophomores" name="sophomores">
-                    </select>
+                    <div id="list2" class="dropdown-check-list-s" tabindex="100">
+                        <span class="anch">Select Sophomores</span>
+                        <ul id="sophomores">
+                        </ul>
+                    </div><br>
                     <br><br>
                     <button id="edit-confirm" class="button">Edit</button>
                     <button id="back" class="button">Cancel</button>
@@ -40,14 +43,6 @@
                     let option = document.createElement('option');
                     option.innerText = data[i];
                     list.appendChild(option);
-                }
-
-                let sdata = ["a", "b", "c", "d"];
-                let slist = document.getElementById("sophomores");
-                for (i = 0; i < sdata.length; i++) {
-                    let option = document.createElement('option');
-                    option.innerText = sdata[i];
-                    slist.appendChild(option);
                 }
 
                 let jdata = ["Ram", "Shyam", "Sita", "Gita"];
@@ -82,16 +77,60 @@
                     jlist.appendChild(option);
                     
                 }
-            
+        
 
+                let sdata = ["a", "b", "c", "d"];
+                let slist = document.getElementById("list2");
+                for (i = 0; i < sdata.length; i++) {
+                    let option = document.createElement('li');
+                    //create checkbox
+                    let checkbox = document.createElement('input');
+                    
+                    // Assigning the attributes to created checkbox
+                    checkbox.type = "checkbox";
+                    checkbox.name = "name";
+                    checkbox.value = "value";
+                    checkbox.id = i+"li2";
+        
+                    // creating label for checkbox
+                    let label = document.createElement('label');
+        
+                    // assigning attributes for the created label tag 
+                    label.htmlFor = checkbox.id;
+        
+                    // appending the created text to 
+                    // the created label tag 
+                    label.appendChild(document.createTextNode(sdata[i]));
+                    //let text = document.createTextNode(jdata[i]);
+        
+                    // appending the checkbox and label to div
+                    //option.appendChild(text);
+                    option.appendChild(checkbox);
+                    option.appendChild(label);
+                    slist.appendChild(option);
+                    
+                }
+
+                
                 var checkList = document.getElementById('list1');
                 checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
                     if (checkList.classList.contains('visible')) {
                         checkList.classList.remove('visible');
-                        console.log("is not visible")
+                        console.log("j is not visible")
                     } else {
                         checkList.classList.add('visible');
-                        console.log("is visible")
+                        console.log("j is visible")
+                    }
+                }
+
+                var checkList = document.getElementById('list2');
+                checkList.getElementsByClassName('anch')[0].onclick = function(evt) {
+                    if (checkList.classList.contains('v')) {
+                        checkList.classList.remove('v');
+                        console.log("s is not visible")
+                    } else {
+                        checkList.classList.add('v');
+                        console.log("s is visible")
                     }
                 }
             </script>
@@ -145,6 +184,9 @@
         </section>
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
+            <div id="logout">
+                <button class="button">Logout</button>
+            </div>
         </footer>
     </body>
 </html>
