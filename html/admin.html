@@ -11,6 +11,8 @@
         </header>
         <section>
             <div class="edit-box">
+                <button class="button edit_button">Edit</button>
+                <button class="button cancel_button">Cancel</button>
                 <form>
                     <input type="text" name="Project Name" placeholder="Project Name"/><br>
                     <input type="text" name="Client Name" placeholder="Client Name"/><br>
@@ -21,22 +23,23 @@
                     <label id="edit_label">Juniors</label>
                     <div id="list1" class="dropdown-check-list" tabindex="100">
                         <span class="anchor">Select Juniors</span>
-                        <ul id="juniors">
+                        <p class="prevent-select spacing">&nbsp;</p>
+                        <ul id="juniors" class="dropdown-show">
                         </ul>
                     </div><br>
                     <label id="edit_label">Sophomores</label>
                     <div id="list2" class="dropdown-check-list-s" tabindex="100">
                         <span class="anch">Select Sophomores</span>
-                        <ul id="sophomores">
+                        <p class="prevent-select spacing">&nbsp;</p>
+                        <ul id="sophomores" class="dropdown-show-s">
                         </ul>
                     </div><br>
                     <br><br>
-                    <button id="edit-confirm" class="button">Edit</button>
-                    <button id="back" class="button">Cancel</button>
                 </form>
             </div>
             <script>
                 
+                //admin data and putting it into the dropdown
                 let data = ["Caudle", "Norris"];
                 let list = document.getElementById("advisors");
                 for (i = 0; i < data.length; ++i) {
@@ -45,9 +48,9 @@
                     list.appendChild(option);
                 }
 
-                let jdata = ["Ram", "Shyam", "Sita", "Gita"];
-                
-                let jlist = document.getElementById("list1");
+                //junior data and putting it into the dropdown
+                let jdata = ["Ram", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita", "Shyam", "Sita", "Gita","kirby"];
+                let jlist = document.getElementById("juniors");
                 for (i = 0; i < jdata.length; i++) {
                     let option = document.createElement('li');
                     //create checkbox
@@ -55,81 +58,89 @@
                     
                     // Assigning the attributes to created checkbox
                     checkbox.type = "checkbox";
-                    checkbox.name = "name";
-                    checkbox.value = "value";
                     checkbox.id = i;
         
                     // creating label for checkbox
                     let label = document.createElement('label');
-        
+                    label.className = "container";
+
+                    //creating span for checkbox
+                    let span = document.createElement('span');
+                    span.className = "checkmark";
+
                     // assigning attributes for the created label tag 
                     label.htmlFor = checkbox.id;
         
-                    // appending the created text to 
-                    // the created label tag 
+                    // appending the created text to the created label tag 
                     label.appendChild(document.createTextNode(jdata[i]));
-                    //let text = document.createTextNode(jdata[i]);
         
                     // appending the checkbox and label to div
-                    //option.appendChild(text);
                     option.appendChild(checkbox);
-                    option.appendChild(label);
-                    jlist.appendChild(option);
+                    option.appendChild(span);
+                    label.appendChild(option);
+                    jlist.appendChild(label);
                     
                 }
         
-
+                //sophomore data and putting it into the dropdown
                 let sdata = ["a", "b", "c", "d"];
-                let slist = document.getElementById("list2");
+                let slist = document.getElementById("sophomores");
                 for (i = 0; i < sdata.length; i++) {
-                    let option = document.createElement('li');
+                    let soption = document.createElement('li');
                     //create checkbox
-                    let checkbox = document.createElement('input');
+                    let scheckbox = document.createElement('input');
                     
                     // Assigning the attributes to created checkbox
-                    checkbox.type = "checkbox";
-                    checkbox.name = "name";
-                    checkbox.value = "value";
-                    checkbox.id = i+"li2";
+                    scheckbox.type = "checkbox";
+                    scheckbox.id = i+"li";
         
                     // creating label for checkbox
-                    let label = document.createElement('label');
-        
+                    let slabel = document.createElement('label');
+                    slabel.className = "container";
+
+                    //creating span for checkbox
+                    let Sspan = document.createElement('span');
+                    Sspan.className = "checkmark";
+
                     // assigning attributes for the created label tag 
-                    label.htmlFor = checkbox.id;
+                    slabel.htmlFor = scheckbox.id;
         
-                    // appending the created text to 
-                    // the created label tag 
-                    label.appendChild(document.createTextNode(sdata[i]));
-                    //let text = document.createTextNode(jdata[i]);
+                    // appending the created text to the created label tag 
+                    slabel.appendChild(document.createTextNode(sdata[i]));
         
                     // appending the checkbox and label to div
-                    //option.appendChild(text);
-                    option.appendChild(checkbox);
-                    option.appendChild(label);
-                    slist.appendChild(option);
+                    soption.appendChild(scheckbox);
+                    soption.appendChild(Sspan);
+                    slabel.appendChild(soption);
+                    slist.appendChild(slabel);
                     
                 }
 
                 
                 var checkList = document.getElementById('list1');
+                var checkBoxes = document.getElementById('juniors');
                 checkList.getElementsByClassName('anchor')[0].onclick = function(evt) {
                     if (checkList.classList.contains('visible')) {
                         checkList.classList.remove('visible');
+                        checkBoxes.classList.remove('visible');
                         console.log("j is not visible")
                     } else {
                         checkList.classList.add('visible');
+                        checkBoxes.classList.add('visible');
                         console.log("j is visible")
                     }
                 }
 
-                var checkList = document.getElementById('list2');
-                checkList.getElementsByClassName('anch')[0].onclick = function(evt) {
-                    if (checkList.classList.contains('v')) {
-                        checkList.classList.remove('v');
+                var ScheckList = document.getElementById('list2');
+                var ScheckBoxes = document.getElementById('sophomores');
+                ScheckList.getElementsByClassName('anch')[0].onclick = function(evt) {
+                    if (ScheckList.classList.contains('v')) {
+                        ScheckList.classList.remove('v');
+                        ScheckBoxes.classList.remove('v');
                         console.log("s is not visible")
                     } else {
-                        checkList.classList.add('v');
+                        ScheckList.classList.add('v');
+                        ScheckBoxes.classList.add('v');
                         console.log("s is visible")
                     }
                 }
@@ -185,7 +196,7 @@
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
             <div id="logout">
-                <button class="button">Logout</button>
+                <button class="lbutton">Logout</button>
             </div>
         </footer>
     </body>
