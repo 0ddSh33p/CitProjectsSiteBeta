@@ -1,3 +1,4 @@
+/*import font*/
 @font-face {
     font-family: "renogare";
     src: url(https://raw.githubusercontent.com/0ddSh33p/CitProjectsSiteBeta/main/css/Renogare.ttf) format("truetype");
@@ -6,14 +7,19 @@ p,label {
     color: #FFE4BC;
     font-family: "renogare", "verdana", sans-serif;
 }
+
 body {
     background: #005298;
 }
 
 main {
-	margin-top: 10em;
+	margin-top: 10px;
 	padding: 1px 0 1px 5%;
 	border-left: 1px solid;
+}
+
+div {
+    margin: 0;
 }
 
 header {
@@ -29,6 +35,7 @@ header {
 	padding: 10px;
 }
 
+/*CIT logo*/
 #headImg{
     display: inline;
     float: right;
@@ -45,7 +52,6 @@ h1 {
 }
 
 section {
-	float: top;
     width: 90%;
 	margin-top: 75px;
     padding: 30px;
@@ -54,17 +60,34 @@ section {
     font-family: "renogare", "verdana", sans-serif;
 }
 
+/*textboxes*/
 input[type=text] {
     font-family: "renogare", "verdana", sans-serif;
     width: 100%;
     padding: 12px 20px;
     margin-bottom: 5px;
+    background-color: #fdf3e2;
     border-color:#183536;
     border-radius: 8px;
 }
 
 input[type=text]:focus {
     background-color: #FFE4BC;
+}
+
+input[type=checkbox] {
+    cursor: pointer;
+}
+
+select {
+    font-size: 16px;
+    font-family: "renogare", "verdana", sans-serif;
+    background-color: #183536;
+    border-color:#FFE4BC;
+    color: #FFE4BC;
+    border-radius: 3px;
+    border: 1px solid;
+    padding: 2px;
 }
 
 footer {
@@ -80,6 +103,7 @@ footer {
     position: fixed;
 }
 
+/*button to add new projects*/
 #add {
     position: absolute;
     top: 75%;
@@ -113,6 +137,28 @@ footer {
     cursor: pointer;
 }
 
+/*logout button*/
+.lbutton {
+    background-color: #005298;
+    border-color: #FFE4BC;
+    color: #FFE4BC;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: "renogare", "verdana", sans-serif;
+    font-size: 16px;
+    border-radius: 12px;
+    transition-duration: 0.2s;
+}
+
+.lbutton:hover {
+    background-color: #F66068;
+
+    cursor: pointer;
+}
+
+/*button to access project for admins*/
 .project_tile {
     display: inline-block;
     background-color: #183536;
@@ -135,6 +181,7 @@ footer {
     cursor: pointer;
 }
 
+/*the light background for buttons*/
 #admin_button {
     display: inline-block;
     background: #FFE4BC;
@@ -157,11 +204,11 @@ footer {
     margin: 3px;
 }
 
+/*delete project button*/
 .delete {
     position: relative;
     left: 65%;
 }
-
 
 a:link {
     color: #F66068;
@@ -183,7 +230,7 @@ a:visited {
     position: absolute;
     display: inline-block;
     width: 70%;
-    height: 500px;
+    height: 575px;
     margin-left: 15%;
     padding: 10px;
     background:#F66068;
@@ -191,6 +238,7 @@ a:visited {
     border-style: solid;
     border-width:5px;
     border-color:rgb(243, 210, 169);
+    box-shadow: 5px 5px 10px 5px #00000093;
 }
 
 #edit_label {
@@ -198,36 +246,72 @@ a:visited {
     display: block;
 }
 
-#edit-confirm #back {
-    position: relative;
-    float: bottom;
-    top: 100%
+.edit_button {
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
 }
+
+.cancel_button {
+    position: absolute;
+    display: inline-block;
+    bottom: 20px;
+    left: 11%;
+}
+
+
+/*dropdown for juniors*/
 
 .dropdown-check-list {
     display: inline-block;
+    margin: 0;
 }
-  
+
+.dropdown-check-list ul {
+    width: 100%;
+    height: 0px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.dropdown-check-list.visible ul {
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+/*this is the access button to the dropdown*/
 .dropdown-check-list .anchor {
     cursor: pointer;
     display: inline-block;
     padding: 5px 10px 5px 10px;
-    border: 1px solid #ccc;
+    background: #183536;
+    border: 1px solid #FFE4BC;
+    color:#FFE4BC;
+    border-radius: 3px;
+    margin: 0;
 }
   
 .dropdown-check-list.visible .anchor {
-    color: #0094ff;
+    background: #FFE4BC;
+    color: #183536;
     position: absolute;
     content: "";
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+    border-left: 2px solid #183536;
+    border-top: 2px solid #183536;
     padding: 5px 10px 5px 10px;
+    margin: 0;
 }
 
+/*this is to make sure the dropdown doesn't overlap with the access button*/
+.spacing {
+    font-size: 30px;
+    margin: 0;
+}
+
+/*the dropdown itself*/
 .dropdown-check-list li {
-    max-height: 0;
-    transition: max-height 0.15s ease-out;
-    overflow: hidden;
     display: block;
     list-style: none;
     border: none;
@@ -236,47 +320,140 @@ a:visited {
     margin: 0;
 }
 
-.dropdown-check-list.visible #juniors{
-    margin-bottom: 30px;
+/*dropdown animation*/
+.dropdown-show .container{
+    display: inline-block;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
 }
 
-.dropdown-check-list.visible li {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+.dropdown-show.visible .container{
     display: block;
-    z-index: 10;
+    max-height: 50px;
+    transition: max-height 0.5s ease-in;
+    opacity: 1;
+}
+
+/* The container for the checkbox */
+.container {
+    display: block;
+    position: relative;
+    margin-bottom: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    background:#183536;
+    padding: 5px 5px 5px 50px;
+    border:#FFE4BC;
+    border-radius: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+  
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: #fdf3e2;
     margin: 0;
-    border: 1px solid #ccc;
-    border-top: none;
-    padding: 3px;
+}
+  
+/* On mouse-over, add a darker cream */
+.container:hover input ~ .checkmark {
+    background-color: #f5c47a;
+}
+  
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+    background-color: #005298;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+  
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+  
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 6px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #FFE4BC;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 /*dropdown for sophomores*/
 
 .dropdown-check-list-s {
     display: inline-block;
+    margin: 0;
 }
-  
+
+.dropdown-check-list-s ul {
+    width: 100%;
+    height: 0px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+.dropdown-check-list-s.v ul {
+    width: 100%;
+    height: 100px;
+    overflow-y: auto;
+    margin: 0;
+}
+
+/*this is the access button to the dropdown*/
 .dropdown-check-list-s .anch {
     cursor: pointer;
     display: inline-block;
     padding: 5px 10px 5px 10px;
-    border: 1px solid #ccc;
+    background: #183536;
+    border: 1px solid #FFE4BC;
+    color:#FFE4BC;
+    border-radius: 3px;
+    margin: 0;
 }
   
 .dropdown-check-list-s.v .anch {
-    color: #0094ff;
+    background: #FFE4BC;
+    color: #183536;
     position: absolute;
     content: "";
-    border-left: 2px solid black;
-    border-top: 2px solid black;
+    border-left: 2px solid #183536;
+    border-top: 2px solid #183536;
     padding: 5px 10px 5px 10px;
+    margin: 0;
 }
 
+/*the dropdown itself*/
 .dropdown-check-list-s li {
-    max-height: 0;
-    transition: max-height 0.15s ease-out;
-    overflow: hidden;
     display: block;
     list-style: none;
     border: none;
@@ -285,17 +462,18 @@ a:visited {
     margin: 0;
 }
 
-.dropdown-check-list-s.v #sophomores{
-    margin-bottom: 30px;
+/*dropdown animation*/
+.dropdown-show-s .container{
+    display: inline-block;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.15s ease-out;
+    overflow: hidden;
 }
 
-.dropdown-check-list-s.v li {
-    max-height: 500px;
-    transition: max-height 0.5s ease-in;
+.dropdown-show-s.v .container{
     display: block;
-    z-index: 10;
-    margin: 0;
-    border: 1px solid #ccc;
-    border-top: none;
-    padding: 3px;
+    max-height: 50px;
+    transition: max-height 0.5s ease-in;
+    opacity: 1;
 }
