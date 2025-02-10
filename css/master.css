@@ -33,6 +33,7 @@ header {
 	z-index: 10;
 	height: 75px;
 	padding: 10px;
+    box-shadow: 0px 2px 10px 1px #00000093;
 }
 
 /*CIT logo*/
@@ -72,7 +73,7 @@ input[type=text] {
 }
 
 input[type=text]:focus {
-    background-color: #FFE4BC;
+    background-color: #f5c47a;
 }
 
 input[type=checkbox] {
@@ -101,6 +102,7 @@ footer {
     margin-top: 5%;
     background-color: #183536;
     position: fixed;
+    box-shadow: 0px -2px 10px 1px #00000093;
 }
 
 /*button to add new projects*/
@@ -108,6 +110,10 @@ footer {
     position: absolute;
     top: 75%;
     left: 90%;
+}
+
+.add {
+    box-shadow: 4px 4px 10px 2px #00000093;
 }
 
 #logout {
@@ -225,10 +231,36 @@ a:visited {
     user-select: none; /* Standard syntax */
 }
 
+/*ui for when user wants to logout*/
+.logout-box {
+    z-index: 6;
+    position: fixed;
+    display: none; /*change to inline-block when you want the edit box to show up*/
+    width: 50%;
+    height: 130px;
+    margin-left: 25%;
+    margin-top:10%;
+    padding: 10px;
+    background:#F66068;
+    border-radius: 15px;
+    border-style: solid;
+    border-width:5px;
+    border-color:rgb(243, 210, 169);
+    box-shadow: 5px 5px 10px 5px #00000093;
+}
+
+#logout_label {
+    color: #183536;
+    display: block;
+    font-size:30px;
+}
+
+
+/*ui for when you press edit on a project*/
 .edit-box {
     z-index: 5;
     position: absolute;
-    display: inline-block;
+    display: none; /*change to inline-block when you want the edit box to show up*/
     width: 70%;
     height: 575px;
     margin-left: 15%;
@@ -252,7 +284,7 @@ a:visited {
     bottom: 20px;
 }
 
-.cancel_button {
+.edit_cancel {
     position: absolute;
     display: inline-block;
     bottom: 20px;
