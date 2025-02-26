@@ -337,14 +337,14 @@ async function logout() {
 
 //script to make logout box disappear
 function del_cancel() {
-    var delbox = document.getElementById('delout_box');
+    var delbox = document.getElementById('del_box');
     delbox.style.display='none';
     console.log("delete box is not visible")
 }
 
 //script for making the logout box appear when logout is pressed
-function delout_show() {
-    var delbox = document.getElementById('delout_box');
+function del_show() {
+    var delbox = document.getElementById('del_box');
         if (delbox.style.display ='none') {
             delbox.style.display = 'inline-block';
             console.log("delete box is visible")
