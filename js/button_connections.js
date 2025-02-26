@@ -1,3 +1,22 @@
+//login
+async function tryLogin(e){
+    var sendUser = document.getElementById("username");
+    var sendPass = document.getElementById("password");
+
+    // add the final url here
+    const baseURL = "https://localhost:3000/tryUser/";
+    e.preventDefault();
+    const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value ,
+        {
+            method: 'GET'	
+        });
+    const data = await res.json();
+    console.log(data)
+    if (data.propType == 1){
+        window.location.replace("https://localhost:3000/student")
+    }
+}
+
 //script to put data into the dropdowns and also make it work
 
 //admin data and putting it into the dropdown for add project box
@@ -299,6 +318,7 @@ function logout_show() {
             console.log("logout box is visible")
         }
 }
+
 //script to log out the user
 async function logout() {
   try {
@@ -313,4 +333,20 @@ async function logout() {
   } catch (error) {
     console.error("Logout failed:", error);
   }
+}
+
+//script to make logout box disappear
+function del_cancel() {
+    var delbox = document.getElementById('delout_box');
+    delbox.style.display='none';
+    console.log("delete box is not visible")
+}
+
+//script for making the logout box appear when logout is pressed
+function delout_show() {
+    var delbox = document.getElementById('delout_box');
+        if (delbox.style.display ='none') {
+            delbox.style.display = 'inline-block';
+            console.log("delete box is visible")
+        }
 }
