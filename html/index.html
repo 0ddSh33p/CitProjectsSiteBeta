@@ -11,40 +11,19 @@
         </header>
         <section>
             <div id="loginBox">
-		<form>
-	                <input type="text" id = "username" name="username" placeholder="Username"/><br>
-	                <input type="text" id = "password" name="password" placeholder="Password"/>
-	                <br>
-	                <label>Remember me?
-	                	<input type="checkbox", id="keepLogin"/>
-			</label>
-	                <br><br>
-	                <button type="button" onclick="tryLogin(event)" id="Login" class="button">Login</button>
-		</form>
+                <input type="text" name="username" placeholder="Username"/><br>
+                <input type="text" name="password" placeholder="Password"/>
+                <br>
+                <label class="container">Remember Me?
+                    <input type="checkbox">
+                    <span class="checkmark"></span>
+                  </label>
+                <br><br>
+                <button id="tryLogin" class="button">Login</button>
             </div>
         </section>
         <footer>
             <p>Have any questions? Contact Mr. Caudle I guess?</p>
         </footer>
-		
-	<script>
-		var sendUser = document.getElementById("username");
-		var sendPass = document.getElementById("password");
-		
-		// add the final url here
-		const baseURL = "https://localhost:3000/tryUser/";
-		async function tryLogin(e){
-			e.preventDefault();
-			const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value ,
-				{
-					method: 'GET'	
-				});
-			const data = await res.json();
-			console.log(data)
-			if (data.propType == 1){
-				window.location.replace("https://localhost:3000/student")
-			}
-		}
-	</script>
     </body>
 </html>
