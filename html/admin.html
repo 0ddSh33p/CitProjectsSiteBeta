@@ -18,6 +18,13 @@
                 <button onclick="logout()" id="logout_confirm" class="button logout_button">Logout</button>
                 <button onclick="log_cancel()" id="logout_cancel" class="button logout_cancel">Cancel</button>
             </div>
+
+            <!--ui box for when admin wants to delete-->
+            <div id="del_box" class="del-box">
+                <label id="del_label">Are you sure you want to delete this project?</label><br><br>
+                <button onclick="del()" id="del_confirm" class="button del_button">Delete</button>
+                <button onclick="del_cancel()" id="del_cancel" class="button del_cancel">Cancel</button>
+            </div>
             
             <!--ui box for when a new user is to be added-->
             <div id="user_box" class="user-box">
@@ -112,7 +119,7 @@
             <!--This is where the projects start-->
             <div id="admin_button">
                 <button class="project_tile">Project Placeholder</button><br>
-                <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" class="delete">Delete</a><br>
+                <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br>
             </div>
             <div id="add" class="add_dropdown" onmouseout="add_hide()">
                 <button class="button add" onclick="add_show()">+</button>
