@@ -57,7 +57,7 @@ function edit_show() {
 function add_hide() {
     var options = document.getElementById('add-options');
     options.style.display='none';
-    console.log("editout box is not visible")
+    console.log("add box is not visible")
 }
 
 //script to make add options show
@@ -65,7 +65,7 @@ function add_show() {
     var options = document.getElementById('add-options');
     if (options.style.display ='none') {
         options.style.display = 'inline-block';
-        console.log("editout box is visible")
+        console.log("add box is visible")
     }
 }
 
