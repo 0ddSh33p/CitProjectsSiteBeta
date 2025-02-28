@@ -14,6 +14,8 @@ async function tryLogin(e){
     console.log(data)
     if (data.propType == 1){
         window.location.replace("https://localhost:3000/student")
+    } else if (data.propType == 2){
+        window.location.replace("https://localhost:3000/admin")
     }
 }
 
