@@ -107,9 +107,12 @@ footer {
 
 /*button to add new projects*/
 #add {
+    z-index: 4;
     position: absolute;
-    top: 60%;
-    left: 88%;
+    margin: 0px;
+    padding: 0px;
+    bottom: 100px;
+    right: 30px;
 }
 
 .add {
@@ -125,7 +128,7 @@ footer {
     background-color: #183536;
     border-color: #FFE4BC;
     color: #FFE4BC;
-    padding: 5px 10px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -263,10 +266,10 @@ a:visited {
     z-index: 6;
     position: fixed;
     display: none; /*change to inline-block when you want the edit box to show up*/
-    width: 50%;
+    width: 550px;
     height: 130px;
     margin-left: 25%;
-    margin-top:10%;
+    margin-top: 8%;
     padding: 10px;
     background:#F66068;
     border-radius: 15px;
@@ -280,6 +283,51 @@ a:visited {
     color: #183536;
     display: block;
     font-size:30px;
+}
+
+/*ui for when user wants to logout*/
+.del-box {
+    z-index: 6;
+    position: fixed;
+    display: none; /*change to inline-block when you want the edit box to show up*/
+    width: 750px;
+    height: 130px;
+    margin-left: 18%;
+    margin-top: 7%;
+    padding: 10px;
+    background:#F66068;
+    border-radius: 15px;
+    border-style: solid;
+    border-width:5px;
+    border-color:rgb(243, 210, 169);
+    box-shadow: 5px 5px 10px 5px #00000093;
+}
+
+#del_label {
+    color: #183536;
+    display: block;
+    font-size:30px;
+}
+
+/*scrollbars*/
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background:#00305a;
+    border-radius: 5px;
+    margin-block: 1px;
+    margin-right: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background:#FFE4BC;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background:#f5c47a;
 }
 
 /*ui for when you press create for a project*/
