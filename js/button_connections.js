@@ -11,7 +11,7 @@ async function tryLogin(e){
             method: 'GET'	
         });
     const data = await res.json();
-    console.log(data)
+    console.log(data.propType)
     if (data.propType == 1){
         window.location.replace("https://localhost:3000/student")
     } else if (data.propType == 2){
