@@ -218,7 +218,7 @@ footer {
 }
 
 /*the light background for buttons*/
-#admin_button {
+.admin_button {
     display: inline-block;
     background: #FFE4BC;
     padding: 5px 10px;
