@@ -133,3 +133,10 @@ function del_show() {
             console.log("delete box is visible")
         }
 }
+
+//Create the project buttons on the admin page
+function add_btn(title){
+    buttonZone = document.getElementById('project_buttons');
+
+    buttonZone.innerHTML = buttonZone.innerHTML + '\n <button class="project_tile"> '+title+'</button><br> \n <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br>'
+}
