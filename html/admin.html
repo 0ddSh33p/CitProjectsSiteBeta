@@ -47,7 +47,7 @@
                 <button id="add_project_confirm", class="button add_project_button">Add Project</button>
                 <button onclick="add_project_cancel()" id="add_project_cancel" class="button add_project_cancel">Cancel</button>
                 <form>
-                    <input type="text" id = "pgname" name="Project Name" placeholder="Project Name"/><br>
+                    <input type="text", id = "pgname", name="Project Name", placeholder="Project Name"/><br>
                     <input type="text" name="Client Name" placeholder="Client Name"/><br>
                     <label id="add_project_label">Advisor</label>
                     <select id="advisors" name="advisors">
@@ -68,12 +68,6 @@
                         </ul>
                     </div><br>
                     <br><br>
-			<script>
-			    var btn = document.getElementById("add_project_confirm");
-			    var name = document.getElementById("pgname");
-				
-			    btn.onclick = add_btn(name);
-		    	</script>
                 </form>
                 <!--spaces so that when you open the box you can scroll to the end and click the buttons-->
                 <p class="prevent-select">&nbsp;</p>
@@ -286,11 +280,9 @@
                     if (UcheckList.classList.contains('u-visible')) {
                         UcheckList.classList.remove('u-visible');
                         UcheckBoxes.classList.remove('u-visible');
-                        console.log("u-j is not visible")
                     } else {
                         UcheckList.classList.add('u-visible');
                         UcheckBoxes.classList.add('u-visible');
-                        console.log("u-j is visible")
                     }
                 }
 
@@ -301,11 +293,9 @@
                     if (UScheckList.classList.contains('u-v')) {
                         UScheckList.classList.remove('u-v');
                         UScheckBoxes.classList.remove('u-v');
-                        console.log("u-s is not visible")
                     } else {
                         UScheckList.classList.add('u-v');
                         UScheckBoxes.classList.add('u-v');
-                        console.log("u-s is visible")
                     }
                 }
 
@@ -318,11 +308,9 @@
                     if (checkList.classList.contains('visible')) {
                         checkList.classList.remove('visible');
                         checkBoxes.classList.remove('visible');
-                        console.log("j is not visible")
                     } else {
                         checkList.classList.add('visible');
                         checkBoxes.classList.add('visible');
-                        console.log("j is visible")
                     }
                 }
 
@@ -333,20 +321,19 @@
                     if (ScheckList.classList.contains('v')) {
                         ScheckList.classList.remove('v');
                         ScheckBoxes.classList.remove('v');
-                        console.log("s is not visible")
                     } else {
                         ScheckList.classList.add('v');
                         ScheckBoxes.classList.add('v');
-                        console.log("s is visible")
+
                     }
                 }
             </script>
 
             <!--This is where the projects start-->
-            <div class="admin_button", id="project_buttons">
-                <button class="project_tile">Project Placeholder</button><br>
-                <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br>
+            <div id="project_buttons">
+                
             </div>
+            
             
             <!--Spaces at the end of the page so that it's possible to scroll down to the bottom of the page and not have the buttons covered up by the footer-->
             <p class="prevent-select">&nbsp;</p>
@@ -369,5 +356,13 @@
             </div>
         </footer>
         <script src="../js/button_connections.js" type="text/javascript"></script>
+        <script>
+            var btn = document.getElementById("add_project_confirm");
+
+            console.log(document.querySelector("#pgname").value);
+            btn.addEventListener("click", function(){
+                add_btn(document.querySelector("#pgname").value);
+            });
+        </script>
     </body>
 </html>
