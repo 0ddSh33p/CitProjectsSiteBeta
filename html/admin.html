@@ -32,8 +32,8 @@
                 <button id="user_again" class="button user_again">Confirm Add Another User</button>
                 <button onclick="add_user_hide()" id="user_cancel" class="button user_cancel">Cancel</button>
                 <form>
-                    <input type="text" name="Username" placeholder="Username (32 characters max)"/><br>
-                    <input type="text" name="Password" placeholder="Password (64 characters max)"/><br>
+                    <input maxlength="32" type="text" name="Username" placeholder="Username (32 characters max)"/><br>
+                    <input maxlength="64" type="text" name="Password" placeholder="Password (64 characters max)"/><br>
                     <input type="text" name="Graduation Year" placeholder="Graduation Year (interger E.x. 2025)"/><br>
                     <label class="container">Advisor?
                         <input type="checkbox">
