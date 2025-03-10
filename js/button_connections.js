@@ -134,9 +134,22 @@ function del_show() {
         }
 }
 
+
+window.addEventListener("load", async (event) => {
+  const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value,
+        {
+            method: 'GET'	
+        });
+    const data = await res.json();
+    for (let i = 0; i < res.length; i++) {
+      add_btn(res[i])
+    }
+});
 //Create the project buttons on the admin page
-function add_btn(title){
+function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
-    buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile"> '+title+'</button><br> \n <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br></div>'
-    add_project_cancel()
+    if(buttonZone != null){
+        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC(data.ProjectName,data.Username)"> '+data.title+'</button><br> \n <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br></div>'
+        add_project_cancel()
+    }
 }
