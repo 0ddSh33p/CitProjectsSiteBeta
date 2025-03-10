@@ -1,12 +1,13 @@
 //login
+const baseURL = "https://localhost:3000";
 async function tryLogin(e){
     var sendUser = document.getElementById("username");
     var sendPass = document.getElementById("password");
 
     // add the final url here
-    const baseURL = "https://localhost:3000/tryUser/";
+    
     e.preventDefault();
-    const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value,
+    const res = await fetch(baseURL + "/tryUser/" + sendUser.value + "/" + sendPass.value,
         {
             method: 'GET'	
         });
@@ -136,7 +137,7 @@ function del_show(id) {
 
 
 window.addEventListener("load", async (event) => {
-  const res = await fetch(baseURL + sendUser.value + "/" + sendPass.value,
+  const res = await fetch(baseURL + "/getProjectNames",
         {
             method: 'GET'	
         });
