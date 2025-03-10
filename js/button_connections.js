@@ -19,14 +19,14 @@ async function tryLogin(e){
     }
 }
 
-//script to make edit box disappear
+//script to make edit add project disappear
 function add_project_cancel() {
     var add_project_box = document.getElementById('add_project_box');
     add_project_box.style.display='none';
     //console.log("add project box is not visible")
 }
 
-//script to make edit box show
+//script to make add project box show
 function add_project_show() {
     var add_project_box = document.getElementById('add_project_box');
     if (add_project_box.style.display ='none') {
@@ -44,7 +44,7 @@ function edit_cancel() {
 }
 
 //script to make edit box show
-function edit_show() {
+function edit_show(id) {
     var editbox = document.getElementById('edit_box');
     if (editbox.style.display ='none') {
         editbox.style.display = 'inline-block';
@@ -126,7 +126,7 @@ function del_cancel() {
 }
 
 //script for making the logout box appear when logout is pressed
-function del_show() {
+function del_show(id) {
     var delbox = document.getElementById('del_box');
         if (delbox.style.display ='none') {
             delbox.style.display = 'inline-block';
@@ -149,7 +149,7 @@ window.addEventListener("load", async (event) => {
 function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
     if(buttonZone != null){
-        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC(data.ProjectName,data.Username)"> '+data.title+'</button><br> \n <a href="#" id="edit" onclick="edit_show()">Edit</a><a href="#" onclick="del_show()" class="delete">Delete</a><br></div>'
+        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.ProjectName+','+data.Username+')"> '+data.title+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
         add_project_cancel()
     }
 }
