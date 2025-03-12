@@ -143,14 +143,14 @@ window.addEventListener("load", async (event) => {
         });
     const data = await res.json();
     for (let i = 0; i < res.length; i++) {
-      add_btn(res[i][0])
+      add_btn(res[i])
     }
 });
 //Create the project buttons on the admin page
 function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
     if(buttonZone != null){
-        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.ProjectName+','+data.Username+')"> '+data.title+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
+        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+data.username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
         add_project_cancel()
     }
 }
