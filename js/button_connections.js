@@ -141,9 +141,9 @@ window.addEventListener("load", async (event) => {
         {
             method: 'GET'	
         });
-    const data = await res.json();
-    for (let i = 0; i < res.length; i++) {
-      add_btn(res[i])
+    const data = await res.result;
+    for (let i = 0; i < data.length; i++) {
+      add_btn(data[i])
     }
 });
 //Create the project buttons on the admin page
