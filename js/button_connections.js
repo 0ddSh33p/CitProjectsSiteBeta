@@ -19,6 +19,13 @@ async function tryLogin(e){
         window.location.replace("https://localhost:3000/admin")
     }
 }
+//script to add the project to the database
+async function add_project() {
+    var sendName = document.getElementById("pgname");
+    var sendAdvisor = document.getElementById("advisors");
+    var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
+    console.log(success);
+}
 
 //script to make edit add project disappear
 function add_project_cancel() {
