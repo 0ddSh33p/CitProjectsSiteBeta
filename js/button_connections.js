@@ -143,7 +143,7 @@ window.addEventListener("load", async (event) => {
         });
     const data = await res.json();
     for (let i = 0; i < res.length; i++) {
-      add_btn(res[i])
+      add_btn(res[i][0])
     }
 });
 //Create the project buttons on the admin page
