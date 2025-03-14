@@ -158,7 +158,11 @@ function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
     var username = "GET THEIR NAME"
     if(buttonZone != null){
-        buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
+        if(document.getElementById('add')){
+            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
+        } else {
+            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="student_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button></div>'
+        }
         add_project_cancel()
     }
 }
