@@ -21,17 +21,22 @@ async function tryLogin(e){
 }
 //script to add the project to the database
 async function add_project() {
+    var form = document.getElementById("add-form");
     var sendName = document.getElementById("pgname");
     var sendAdvisor = document.getElementById("advisors");
     var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
     console.log(success);
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
 }
 
 //script to make edit add project disappear
 function add_project_cancel() {
+    var form = document.getElementById("add-form");
     var add_project_box = document.getElementById('add_project_box');
     add_project_box.style.display='none';
-    //console.log("add project box is not visible")
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
 }
 
 //script to make add project box show
@@ -39,7 +44,6 @@ function add_project_show() {
     var add_project_box = document.getElementById('add_project_box');
     if (add_project_box.style.display ='none') {
         add_project_box.style.display = 'inline-block';
-        //console.log("add project box is visible")
     }
 }
 
@@ -48,7 +52,6 @@ function add_project_show() {
 function edit_cancel() {
     var editbox = document.getElementById('edit_box');
     editbox.style.display='none';
-    //console.log("editout box is not visible")
 }
 
 //script to make edit box show
@@ -56,7 +59,6 @@ function edit_show(id) {
     var editbox = document.getElementById('edit_box');
     if (editbox.style.display ='none') {
         editbox.style.display = 'inline-block';
-        //console.log("editout box is visible")
     }
 }
 
@@ -65,7 +67,6 @@ function edit_show(id) {
 function add_hide() {
     var options = document.getElementById('add-options');
     options.style.display='none';
-    //console.log("add box is not visible")
 }
 
 //script to make add options show
@@ -73,24 +74,27 @@ function add_show() {
     var options = document.getElementById('add-options');
     if (options.style.display ='none') {
         options.style.display = 'inline-block';
-        //console.log("add box is visible")
     }
 }
 
 //script to make add options disappear
 function add_user_hide() {
+    var form = document.getElementById("user-form");
     var ub = document.getElementById('user_box');
     ub.style.display='none';
-    //console.log("add user box is not visible")
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
 }
 
 //script to make add options show
 function add_user_show() {
+    var form = document.getElementById("user-form");
     var ub = document.getElementById('user_box');
     if (ub.style.display ='none') {
         ub.style.display = 'inline-block';
-        //console.log("add user box is visible")
     }
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
 }
 
 
@@ -98,7 +102,6 @@ function add_user_show() {
 function log_cancel() {
     var logbox = document.getElementById('logout_box');
     logbox.style.display='none';
-    //console.log("logout box is not visible")
 }
 
 //script for making the logout box appear when logout is pressed
@@ -106,7 +109,6 @@ function logout_show() {
     var logbox = document.getElementById('logout_box');
         if (logbox.style.display ='none') {
             logbox.style.display = 'inline-block';
-            //console.log("logout box is visible")
         }
 }
 
@@ -130,7 +132,6 @@ async function logout() {
 function del_cancel() {
     var delbox = document.getElementById('del_box');
     delbox.style.display='none';
-    //console.log("delete box is not visible")
 }
 
 //script for making the logout box appear when logout is pressed
@@ -138,7 +139,6 @@ function del_show(id) {
     var delbox = document.getElementById('del_box');
         if (delbox.style.display ='none') {
             delbox.style.display = 'inline-block';
-            //console.log("delete box is visible")
         }
 }
 
