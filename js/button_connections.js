@@ -163,6 +163,6 @@ function add_btn(data){
         } else {
             buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="student_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button></div>'
         }
-        add_project_cancel()
+        
     }
 }
