@@ -30,6 +30,29 @@ async function add_project() {
     form.reset(); // Resets all input fields
 }
 
+async function addUser() {
+    var name = document.getElementByName("userBox");
+    var pass = document.getElementByName("passBox");
+    var grad = document.getElementById("numeric-input");
+    var admin = document.getElementByID("adminBox");
+    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
+    console.log(success);
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
+    add_user_hide();
+}
+async function addUserRepeat() {
+    var name = document.getElementByName("userBox");
+    var pass = document.getElementByName("passBox");
+    var grad = document.getElementById("numeric-input");
+    var admin = document.getElementByID("adminBox");
+    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
+    console.log(success);
+    // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
+    add_user_show();
+}
+
 //script to make edit add project disappear
 function add_project_cancel() {
     var form = document.getElementById("add-form");
