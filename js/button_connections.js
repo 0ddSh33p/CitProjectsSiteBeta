@@ -36,7 +36,7 @@ async function addUser() {
     var pass = document.getElementById("passBox");
     var grad = document.getElementById("numeric-input");
     var admin = document.getElementById("adminBox");
-    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
+    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.checked);
     console.log(success);
     // Clear form inputs after data processing
     form.reset(); // Resets all input fields
@@ -47,7 +47,7 @@ async function addUserRepeat() {
     var pass = document.getElementById("passBox");
     var grad = document.getElementById("numeric-input");
     var admin = document.getElementById("adminBox");
-    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
+    var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.checked);
     console.log(success);
     // Clear form inputs after data processing
     form.reset(); // Resets all input fields
