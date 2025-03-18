@@ -165,7 +165,7 @@ function del_show(id) {
         }
 }
 
-
+//when page loads gets projects
 window.addEventListener("load", async (event) => {
   const res = await fetch(baseURL + "/getProjectNames",
         {
@@ -188,4 +188,9 @@ function add_btn(data){
         }
         
     }
+}
+
+//refresh the page
+function refresh(){
+    window.location.reload();
 }
