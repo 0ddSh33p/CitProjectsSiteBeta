@@ -1,3 +1,4 @@
+var form = document.getElementById("add-form");
 //login
 const baseURL = "https://localhost:3000";
 async function tryLogin(e){
