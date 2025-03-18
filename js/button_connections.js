@@ -1,4 +1,5 @@
 var form = document.getElementById("add-form");
+idToDelete = -1;
 //login
 const baseURL = "https://localhost:3000";
 async function tryLogin(e){
@@ -30,8 +31,8 @@ async function add_project() {
     form.reset(); // Resets all input fields
 }
 
-async deleteProject(my_id){
-    var success = await fetch(baseURL + "/deleteProject/" + my_id;
+async deleteProject(){
+    var success = await fetch(baseURL + "/deleteProject/" + idToDelete;
     console.log(success);
     refresh();
 }
@@ -166,6 +167,7 @@ function del_cancel() {
 //script for making the logout box appear when logout is pressed
 function del_show(id) {
     var delbox = document.getElementById('del_box');
+    idToDelete = id;
         if (delbox.style.display ='none') {
             delbox.style.display = 'inline-block';
         }
