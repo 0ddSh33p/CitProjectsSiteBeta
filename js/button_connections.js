@@ -31,10 +31,10 @@ async function add_project() {
 }
 
 async function addUser() {
-    var name = document.getElementByName("userBox");
-    var pass = document.getElementByName("passBox");
+    var name = document.getElementById("userBox");
+    var pass = document.getElementById("passBox");
     var grad = document.getElementById("numeric-input");
-    var admin = document.getElementByID("adminBox");
+    var admin = document.getElementById("adminBox");
     var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
     console.log(success);
     // Clear form inputs after data processing
@@ -42,10 +42,10 @@ async function addUser() {
     add_user_hide();
 }
 async function addUserRepeat() {
-    var name = document.getElementByName("userBox");
-    var pass = document.getElementByName("passBox");
+    var name = document.getElementById("userBox");
+    var pass = document.getElementById("passBox");
     var grad = document.getElementById("numeric-input");
-    var admin = document.getElementByID("adminBox");
+    var admin = document.getElementById("adminBox");
     var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.value);
     console.log(success);
     // Clear form inputs after data processing
