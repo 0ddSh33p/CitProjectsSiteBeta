@@ -4,7 +4,6 @@ const baseURL = "https://localhost:3000";
 async function tryLogin(e){
     var sendUser = document.getElementById("username");
     var sendPass = document.getElementById("password");
-
     // add the final url here
     
     e.preventDefault();
@@ -29,6 +28,12 @@ async function add_project() {
     console.log(success);
     // Clear form inputs after data processing
     form.reset(); // Resets all input fields
+}
+
+async deleteProject(my_id){
+    var success = await fetch(baseURL + "/deleteProject/" + my_id;
+    console.log(success);
+    refresh();
 }
 
 async function addUser() {
