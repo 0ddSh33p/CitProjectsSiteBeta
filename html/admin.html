@@ -28,8 +28,8 @@
             
             <!--ui box for when a new user is to be added-->
             <div id="user_box" class="user-box">
-                <button id="user_confirm" class="button user_add">Confirm User</button>
-                <button id="user_again" class="button user_again">Confirm Add Another User</button>
+                <button id="user_confirm" class="button user_add" onclick = "addUser()">Confirm User</button>
+                <button id="user_again" class="button user_again" onclick = "addUserRepeat()">Confirm Add Another User</button>
                 <button onclick="add_user_hide()" id="user_cancel" class="button user_cancel">Cancel</button>
                 <form>
                     <input maxlength="32" type="text" name="Username" placeholder="Username (32 characters max)"/><br>
