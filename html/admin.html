@@ -31,7 +31,7 @@
                 <button id="user_confirm" class="button user_add" onclick = "addUser()">Confirm User</button>
                 <button id="user_again" class="button user_again" onclick = "addUserRepeat()">Confirm Add Another User</button>
                 <button onclick="add_user_hide()" id="user_cancel" class="button user_cancel">Cancel</button>
-                <form>
+                <form id="user-form">
                     <input maxlength="32" id = "passBox" type="text" name="Username" placeholder="Username (32 characters max)"/><br>
                     <input maxlength="64" id = "userBox" type="text" name="Password" placeholder="Password (64 characters max)"/><br>
                     <input maxlength="4" id="numeric-input" pattern="[0-9]{4}" inputmode="numeric" type="text" name="Graduation Year" placeholder="Graduation Year (interger E.x. 2025)"/><br>
@@ -46,7 +46,7 @@
             <div id="add_project_box" class="add-project-box">
                 <button onclick="add_project(); refresh()" id="add_project_confirm", class="button add_project_button">Add Project</button>
                 <button onclick="add_project_cancel()" id="add_project_cancel" class="button add_project_cancel">Cancel</button>
-                <form>
+                <form id="add-form">
                     <input maxlength="32" type="text", id = "pgname", name="Project Name", placeholder="Project Name"/><br>
                     <input maxlength="32" type="text" name="Client Name" placeholder="Client Name"/><br>
                     <label id="add_project_label">Advisor</label>
@@ -83,7 +83,7 @@
             <div id="edit_box" class="edit-box">
                 <button id="edit_confirm" class="button edit_button">Edit</button>
                 <button onclick="edit_cancel()" id="edit_cancel" class="button edit_cancel">Cancel</button>
-                <form>
+                <form id="edit-form">
                     <input maxlength="32" type="text" name="Project Name" placeholder="Project Name" value=""/><br>
                     <input maxlength="32" type="text" name="Client Name" placeholder="Client Name" value=""/><br>
                     <label id="edit_label">Advisor</label>
