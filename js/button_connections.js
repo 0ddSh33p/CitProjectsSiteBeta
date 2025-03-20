@@ -32,7 +32,7 @@ async function add_project() {
 }
 
 async deleteProject(){
-    var success = await fetch(baseURL + "/deleteProject/" + idToDelete;
+    var success = await fetch(baseURL + "/deleteProject/" + idToDelete);
     console.log(success);
     refresh();
 }
