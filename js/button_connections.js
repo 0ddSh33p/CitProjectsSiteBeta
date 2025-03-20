@@ -1,4 +1,5 @@
 var form = document.getElementById("add-form");
+var uform = document.getElementById("user-form");
 idToDelete = -1;
 //login
 const baseURL = "https://localhost:3000";
@@ -22,7 +23,6 @@ async function tryLogin(e){
 }
 //script to add the project to the database
 async function add_project() {
-    var form = document.getElementById("add-form");
     var sendName = document.getElementById("pgname");
     var sendAdvisor = document.getElementById("advisors");
     var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
@@ -45,7 +45,7 @@ async function addUser() {
     var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.checked);
     console.log(success);
     // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
+    uform.reset(); // Resets all input fields
     add_user_hide();
 }
 async function addUserRepeat() {
@@ -56,13 +56,12 @@ async function addUserRepeat() {
     var success = await fetch(baseURL + "/addUser/" + name.value + "/" + pass.value + "/" + grad.value + "/" + admin.checked);
     console.log(success);
     // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
+    uform.reset(); // Resets all input fields
     add_user_show();
 }
 
 //script to make edit add project disappear
 function add_project_cancel() {
-    var form = document.getElementById("add-form");
     var add_project_box = document.getElementById('add_project_box');
     add_project_box.style.display='none';
     // Clear form inputs after data processing
@@ -109,22 +108,20 @@ function add_show() {
 
 //script to make add options disappear
 function add_user_hide() {
-    var form = document.getElementById("user-form");
     var ub = document.getElementById('user_box');
     ub.style.display='none';
     // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
+    uform.reset(); // Resets all input fields
 }
 
 //script to make add options show
 function add_user_show() {
-    var form = document.getElementById("user-form");
     var ub = document.getElementById('user_box');
     if (ub.style.display ='none') {
         ub.style.display = 'inline-block';
     }
     // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
+    uform.reset(); // Resets all input fields
 }
 
 
