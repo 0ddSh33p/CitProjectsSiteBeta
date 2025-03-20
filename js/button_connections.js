@@ -25,10 +25,8 @@ async function tryLogin(e){
 async function add_project() {
     var sendName = document.getElementById("pgname");
     var sendAdvisor = document.getElementById("advisors");
-    var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
-    console.log(success);
+    fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
     // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
 }
 
 async function deleteProject(){
