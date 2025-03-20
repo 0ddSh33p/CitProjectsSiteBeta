@@ -31,7 +31,7 @@ async function add_project() {
     form.reset(); // Resets all input fields
 }
 
-async deleteProject(){
+async function deleteProject(){
     var success = await fetch(baseURL + "/deleteProject/" + idToDelete);
     console.log(success);
     refresh();
