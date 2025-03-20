@@ -25,8 +25,10 @@ async function tryLogin(e){
 async function add_project() {
     var sendName = document.getElementById("pgname");
     var sendAdvisor = document.getElementById("advisors");
-    fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
+    var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
+    console.log(success);
     // Clear form inputs after data processing
+    form.reset(); // Resets all input fields
 }
 
 async function deleteProject(){
@@ -87,6 +89,10 @@ function edit_show(id) {
     if (editbox.style.display ='none') {
         editbox.style.display = 'inline-block';
     }
+    //input values into the thingy
+    let project_input = document.getElementById('project-name');
+    let project = document.getElementById('project'+id).textContent;
+    project_input.value = project;
 }
 
 
@@ -185,7 +191,7 @@ function add_btn(data){
     var username = "GET THEIR NAME"
     if(buttonZone != null){
         if(document.getElementById('add')){
-            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
+            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button id="project'+data.id+'", class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
         } else {
             buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="student_button"> \n <button class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button></div>'
         }
