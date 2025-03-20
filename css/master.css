@@ -771,12 +771,13 @@ a:visited {
 /* Create a custom checkbox */
 .checkmark {
     position: absolute;
-    top: 5px;
+    top: 4px;
     left: 5px;
     height: 20px;
     width: 20px;
     background-color: #fdf3e2;
     margin: 0;
+    border-radius: 5px;
 }
   
 /* On mouse-over, add a darker cream */
