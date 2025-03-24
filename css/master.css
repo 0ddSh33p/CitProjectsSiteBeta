@@ -34,8 +34,6 @@ header {
 	height: 75px;
 	padding: 10px;
     box-shadow: 0px 2px 10px 1px #00000093;
-	display: flex;
-	align-items: center;
 }
 
 /*CIT logo*/
@@ -44,7 +42,6 @@ header {
     float: right;
     padding-right: 10px;
     right: 7em;
-    margin-right: 10px;
 }
 
 h1 {
@@ -53,7 +50,6 @@ h1 {
     font-size: 40pt;
     width: 50%;
     display: inline;
-    flex: auto;
 }
 
 section {
@@ -77,6 +73,20 @@ input[type=text] {
 }
 
 input[type=text]:focus {
+    background-color: #f5c47a;
+}
+
+input[type=password] {
+    font-family: "renogare", "verdana", sans-serif;
+    width: 100%;
+    padding: 12px 20px;
+    margin-bottom: 5px;
+    background-color: #fdf3e2;
+    border-color:#183536;
+    border-radius: 8px;
+}
+
+input[type=password]:focus {
     background-color: #f5c47a;
 }
 
@@ -771,13 +781,12 @@ a:visited {
 /* Create a custom checkbox */
 .checkmark {
     position: absolute;
-    top: 4px;
+    top: 5px;
     left: 5px;
     height: 20px;
     width: 20px;
     background-color: #fdf3e2;
     margin: 0;
-    border-radius: 5px;
 }
   
 /* On mouse-over, add a darker cream */
@@ -883,4 +892,10 @@ a:visited {
     max-height: 50px;
     transition: max-height 0.5s ease-in;
     opacity: 1;
+}
+
+.centertext {
+	display: flex;
+	justify-content: center;
+        align-items: center;
 }
