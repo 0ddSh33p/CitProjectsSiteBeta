@@ -189,7 +189,8 @@ window.addEventListener("load", async (event) => {
 //Create the project buttons on the admin page
 function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
-    var username = "GET THEIR NAME"
+    var username = getCookie("username");
+    console.log(username);
     if(buttonZone != null){
         if(document.getElementById('add')){
             buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="admin_button"> \n <button id="project'+data.id+'", class="project_tile", onclick = "openVNC('+data.projectname+','+username+')"> '+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
@@ -203,4 +204,17 @@ function add_btn(data){
 //refresh the page
 function refresh(){
     window.location.reload();
+}
+
+function getCookie(name) {
+  const cookieString = document.cookie;
+  const cookies = cookieString.split(';');
+
+  for (let i = 0; i < cookies.length; i++) {
+    const cookie = cookies[i].trim();
+    if (cookie.startsWith(name + '=')) {
+      return cookie.substring(name.length + 1);
+    }
+  }
+  return null;
 }
