@@ -23,12 +23,20 @@ async function tryLogin(e){
 }
 //script to add the project to the database
 async function add_project() {
-    var sendName = document.getElementById("pgname");
-    var sendAdvisor = document.getElementById("advisors");
-    var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
-    console.log(success);
-    // Clear form inputs after data processing
-    form.reset(); // Resets all input fields
+    try {
+        var sendName = document.getElementById("pgname");
+        var sendAdvisor = document.getElementById("advisors");
+        var response = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
+    
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    
+        console.log(await response.json()); // Optionally handle the JSON response
+        form.reset(); // Resets all input fields
+    } catch (error) {
+        console.error('There was an error!', error);
+    }
 }
 
 async function deleteProject(){
