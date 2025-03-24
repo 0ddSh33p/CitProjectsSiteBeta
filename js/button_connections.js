@@ -28,7 +28,8 @@ async function add_project() {
     var success = await fetch(baseURL + "/addProject/" + sendName.value + "/" + sendAdvisor.value);
 
     console.log(success); // Optionally handle the JSON response
-    //form.reset(); // Resets all input fields
+    form.reset(); // Resets all input fields
+    refresh();
 }
 
 async function deleteProject(){
