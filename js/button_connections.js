@@ -208,11 +208,12 @@ function refresh(){
 
 function getCookie(name) {
   const cookieString = document.cookie;
+    console.log(cookieString);
   const cookies = cookieString.split(';');
 
   for (let i = 0; i < cookies.length; i++) {
     const cookie = cookies[i].trim();
-    if (cookie.startsWith(name + '=')) {
+    if (cookie.startsWith(name)) {
       return cookie.substring(name.length + 1);
     }
   }
