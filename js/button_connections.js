@@ -16,8 +16,10 @@ async function tryLogin(e){
     const data = await res.json();
    //console.log(data.propType)
     if (data.propType == 1){
+        localStorage.setItem('username',sendUser.value)
         window.location.replace("https://localhost:3000/student")
     } else if (data.propType == 2){
+        localStorage.setItem('username',sendUser.value)
         window.location.replace("https://localhost:3000/admin")
     }
 }
@@ -152,6 +154,7 @@ async function logout() {
       method: "GET",  // You can also use "POST" if your backend expects it
       credentials: "same-origin" // Ensures cookies are sent if needed
     });
+    localStorage.removeItem('username');
 
     // After the logout action, redirect to the home page or wherever needed
     window.location.href = "https://localhost:3000"; 
@@ -189,7 +192,7 @@ window.addEventListener("load", async (event) => {
 //Create the project buttons on the admin page
 function add_btn(data){
     buttonZone = document.getElementById('project_buttons');
-    var username = getCookie("username");
+    var username = localStorage.getItem('username');;
     console.log(username);
     if(buttonZone != null){
         if(document.getElementById('add')){
@@ -204,18 +207,4 @@ function add_btn(data){
 //refresh the page
 function refresh(){
     window.location.reload();
-}
-
-function getCookie(name) {
-  const cookieString = document.cookie;
-    console.log(cookieString);
-  const cookies = cookieString.split(';');
-
-  for (let i = 0; i < cookies.length; i++) {
-    const cookie = cookies[i].trim();
-    if (cookie.startsWith(name)) {
-      return cookie.substring(name.length + 1);
-    }
-  }
-  return null;
 }
