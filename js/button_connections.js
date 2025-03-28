@@ -150,14 +150,14 @@ function logout_show() {
 async function logout() {
   try {
     // Send the GET request to the logout route
-    const response = await fetch("https://localhost:3000/logout", {
+    const response = await fetch(baseURL + "/logout", {
       method: "GET",  // You can also use "POST" if your backend expects it
       credentials: "same-origin" // Ensures cookies are sent if needed
     });
     localStorage.removeItem('username');
 
     // After the logout action, redirect to the home page or wherever needed
-    window.location.href = "https://localhost:3000"; 
+    window.location.href = baseURL; 
   } catch (error) {
     //console.error("Logout failed:", error);
   }
@@ -203,7 +203,9 @@ function add_btn(data){
         
     }
 }
-
+function openVNC(container, user) {
+    window.location.href = baseURL + `/vnc/start/${container}/${user}`;
+}
 //refresh the page
 function refresh(){
     window.location.reload();
