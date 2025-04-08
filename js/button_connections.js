@@ -203,6 +203,7 @@ function add_btn(data){
             let project_tile = document.createElement("button")
             project_tile.setAttribute('class', "project_tile")
             project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
+            project_tile.setAttribute('id', `project${data.id}`)
             project_tile.innerHTML = `${data.projectname}`
 
             let br1 = document.createElement("br")
@@ -235,6 +236,7 @@ function add_btn(data){
             let project_tile = document.createElement("button")
             project_tile.setAttribute('class', "project_tile")
             project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
+            project_tile.setAttribute('id', `project${data.id}`)
             project_tile.innerHTML = `${data.projectname}`
     
             student_button.appendChild(project_tile)
