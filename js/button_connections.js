@@ -202,7 +202,7 @@ function add_btn(data){
 
             let project_tile = document.createElement("button")
             project_tile.setAttribute('class', "project_tile")
-            project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
+            project_tile.onclick = () => {openVNC(data.projectname, username)}
             project_tile.setAttribute('id', `project${data.id}`)
             project_tile.innerHTML = `${data.projectname}`
 
@@ -210,12 +210,12 @@ function add_btn(data){
 
             let edit = document.createElement("a")
             edit.setAttribute('href', "#")
-            edit.setAttribute('onclick', `edit_show(${data.id})`)
+            edit.onclick = () => {edit_show(data.id)}
             edit.innerHTML = "Edit"
 
             let del = document.createElement("a")
             del.setAttribute('href', "#")
-            del.setAttribute('onclick', `del_show(${data.id})`)
+            del.onclick = () => {del_show(data.id)}
             del.setAttribute('class', "delete")
             del.innerHTML = "Delete"
 
@@ -235,7 +235,7 @@ function add_btn(data){
 
             let project_tile = document.createElement("button")
             project_tile.setAttribute('class', "project_tile")
-            project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
+            project_tile.onclick = () => {openVNC(data.projectname, username)}
             project_tile.setAttribute('id', `project${data.id}`)
             project_tile.innerHTML = `${data.projectname}`
     
