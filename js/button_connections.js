@@ -196,9 +196,50 @@ function add_btn(data){
     console.log(username);
     if(buttonZone != null){
         if(document.getElementById('add')){
-            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="student_button"> \n <button class="project_tile", onclick = "openVNC("'+data.projectname+'",+"'+username+'"")> `+data.projectname+'</button><br> \n <a href="#" onclick="edit_show('+data.id+')">Edit</a><a href="#" onclick="del_show('+data.id+')" class="delete">Delete</a><br></div>'
+
+            let student_button = document.createElement("div")
+            student_button.class = "student_button"
+
+            let project_tile = document.createElement("button")
+            project_tile.class = "project_tile"
+            project_tile.onclick = `openVNC(${data.projectname}, ${username})`
+            project_tile.innerHTML = `${data.projectname}`
+
+            let br1 = document.createElement("br")
+
+            let edit = document.createElement("a")
+            edit.href = "#"
+            edit.onclick = `edit_show(${data.id})`
+            edit.innerHTML = "Edit"
+
+            let del = document.createElement("a")
+            del.href = "#"
+            del.onclick = `del_show(${data.id})`
+            del.class = "delete"
+            del.innerHTML = "Delete"
+
+            let br2 = document.createElement("br")
+
+            student_button.appendChild(project_tile)
+            student_button.appendChild(br1)
+            student_button.appendChild(edit)
+            student_button.appendChild(del)
+            student_button.appendChild(br2)
+
+            buttonZone.appendChild(student_button)
         } else {
-            buttonZone.innerHTML = buttonZone.innerHTML + '\n<div class="student_button"> \n <button class="project_tile", onclick = "openVNC("'+data.projectname+'",+"'+username+'"")> '+data.projectname+'</button></div>'
+
+            let student_button = document.createElement("div")
+            student_button.class = "student_button"
+
+            let project_tile = document.createElement("button")
+            project_tile.class = "project_tile"
+            project_tile.onclick = `openVNC(${data.projectname}, ${username})`
+            project_tile.innerHTML = `${data.projectname}`
+    
+            student_button.appendChild(project_tile)
+
+            buttonZone.appendChild(student_button)
         }
         
     }
