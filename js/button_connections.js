@@ -198,24 +198,24 @@ function add_btn(data){
         if(document.getElementById('add')){
 
             let student_button = document.createElement("div")
-            student_button.class = "student_button"
+            student_button.setAttribute('class', "student_button")
 
             let project_tile = document.createElement("button")
-            project_tile.class = "project_tile"
-            project_tile.onclick = `openVNC(${data.projectname}, ${username})`
+            project_tile.setAttribute('class', "project_tile")
+            project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
             project_tile.innerHTML = `${data.projectname}`
 
             let br1 = document.createElement("br")
 
             let edit = document.createElement("a")
-            edit.href = "#"
-            edit.onclick = `edit_show(${data.id})`
+            edit.setAttribute('href', "#")
+            edit.setAttribute('onclick', `edit_show(${data.id})`)
             edit.innerHTML = "Edit"
 
             let del = document.createElement("a")
-            del.href = "#"
-            del.onclick = `del_show(${data.id})`
-            del.class = "delete"
+            del.setAttribute('href', "#")
+            del.setAttribute('onclick', `del_show(${data.id})`)
+            del.setAttribute('class', "delete")
             del.innerHTML = "Delete"
 
             let br2 = document.createElement("br")
@@ -230,11 +230,11 @@ function add_btn(data){
         } else {
 
             let student_button = document.createElement("div")
-            student_button.class = "student_button"
+            student_button.setAttribute('class', "student_button")
 
             let project_tile = document.createElement("button")
-            project_tile.class = "project_tile"
-            project_tile.onclick = `openVNC(${data.projectname}, ${username})`
+            project_tile.setAttribute('class', "project_tile")
+            project_tile.setAttribute('onclick', `openVNC(${data.projectname}, ${username})`)
             project_tile.innerHTML = `${data.projectname}`
     
             student_button.appendChild(project_tile)
